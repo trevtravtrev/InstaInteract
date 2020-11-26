@@ -1,4 +1,4 @@
-from instainteract import InstaInteract
+from InstaInteract.instainteract import InstaInteract
 
 
 def main():

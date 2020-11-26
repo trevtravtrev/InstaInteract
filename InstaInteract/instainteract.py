@@ -2,7 +2,7 @@ from instapy import InstaPy
 from time import sleep
 from random import uniform
 
-import config
+from InstaInteract import config
 
 
 class InstaInteract:
