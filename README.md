@@ -1,5 +1,5 @@
 # InstaInteract
-Instagram commenting and liking bot. Supports commenting/liking recent posts on Instagram account(s).  
+Instagram commenting and liking bot. Supports mass commenting/liking recent posts on Instagram account(s).  
 
 Setup and usage:  
 - download mozilla firefox if not already installed (https://www.mozilla.org/en-US/firefox/download/thanks/)
