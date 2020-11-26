@@ -26,20 +26,30 @@ def create_comment_list(words, emojis, max_emojis):
     :return: list of new comments created
     """
     comment_list = []
-    for word in words:
-        comment_list.append(word)
-        for emoji in emojis:
-            for i in range(max_emojis + 1):
-                emoji_multiplier = emoji * i
+
+    # generate all permutations of words + emojis with 0 to max_emoji permutations per emoji (word + emoji)
+    for word in words:  # iterate through each word in words
+        comment_list.append(word)   # append word to comment list (word only)
+        for emoji in emojis:    # iterate through each emoji in emojis
+            for i in range(max_emojis): # create every permutation of word + emoji with 0 to max_emojis permutations
+                emoji_multiplier = emoji * (i+1)
                 comment = f'{word} {emoji_multiplier}'
                 decoded_comment = comment.encode().decode('unicode_escape')
-                comment_list.append(decoded_comment)
+                comment_list.append(decoded_comment)    # append comment to comment list (word + emoji)
+
+    # generate all permutations of each emoji from 0 to max_emoji amount (emoji only)
+    for emoji in emojis:
+        for j in range(max_emojis):
+            emoji_multiplier = emoji * (j+1)
+            decoded_emoji_multiplier = emoji_multiplier.encode().decode('unicode_escape')
+            comment_list.append(decoded_emoji_multiplier)
+
     return comment_list
 
 
 def main():
     # settings
-    words_file = "comments.txt"
+    words_file = "words.txt"
     emojis_file = "emojis.txt"
     max_emojis = 3
 

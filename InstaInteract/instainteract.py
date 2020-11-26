@@ -46,7 +46,8 @@ class InstaInteract:
         pw = self.user_accounts.get(username)
         self.session = InstaPy(username=user,
                                password=pw,
-                               headless_browser=False)
+                               headless_browser=False,
+                               bypass_security_challenge_using='email')
         self.session.login()
 
     def _end_session(self):
