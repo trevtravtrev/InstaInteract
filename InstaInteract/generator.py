@@ -1,5 +1,5 @@
 """
-generator.py generates a comment list (every permutation) from one text/phrase text file and one unicode emoji text file
+generator.py generates a comment list (every permutation) from one word/phrase text file and one unicode emoji text file
 
 Inputs: 1. text file of words/phrases 2. text file of unicode emojis (ex: \u2714)
 Output: prints new comment list to console (copy and paste it in config.comments)

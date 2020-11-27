@@ -2,7 +2,8 @@ from InstaInteract.instainteract import InstaInteract
 
 
 def main():
-    InstaInteract("comment_and_like")
+    bot = InstaInteract()
+    bot.run()
 
 
 if __name__ == '__main__':

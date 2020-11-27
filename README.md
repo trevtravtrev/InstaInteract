@@ -9,7 +9,7 @@ Setup and usage:
 - OPTIONAL: use generator.py to create large comment list (every permutation) from a word/phrase text file and a unicode emoji text file (see "Using generator.py" below)  
 - run main.py  
 
-Using generator.py (optional):  
+Using generator.py to generate large unique comment list (optional):  
 - make 1 text file of words/phrases newline separated  
 - make 1 text file of unicode emojis newline separated  
 - fill in settings in main() function (words_file, emojis_file, max_emojis)  
