@@ -8,10 +8,14 @@ from InstaInteract import config
 class InstaInteract:
     def __init__(self):
         self.mode = config.mode
-        self.modes = {"comment_and_like_recent": self._comment_and_like_recent}
-
+        self.modes = {
+            "comment_and_like_recent": self._comment_and_like_recent,
+            "spam_comment_and_like_recent": self._spam_comment_and_like_recent
+        }
         self.user_accounts = config.user_accounts
         self.accounts = config.accounts
+        self.num_comments_from = config.num_comments_from
+        self.num_comments_to = config.num_comments_to
         self.num_posts = config.num_posts
         self.comment = config.comment
         self.comment_percent = config.comment_percent
@@ -47,15 +51,16 @@ class InstaInteract:
         self.session.set_do_comment(enabled=self.comment, percentage=self.comment_percent)
         self.session.set_do_like(enabled=self.like, percentage=self.like_percent)
         # start feature
-        self.session.interact_by_users(self.accounts, amount=self.num_posts, randomize=False)   # removed "media='Photo"
+        self.session.interact_by_users(self.accounts, amount=self.num_posts, randomize=False)  # removed "media='Photo"
 
-    # def _spam_comment_and_like_recent(self):
-    #     # settings
-    #     self.session.set_comments(self.comments)
-    #     self.session.set_do_comment(enabled=self.comment, percentage=self.comment_percent)
-    #     self.session.set_do_like(enabled=self.like, percentage=self.like_percent)
-    #     # start feature
-    #     self.session.interact_by_users(self.accounts, amount=self.num_posts, randomize=False)   # removed "media='Photo"
+    def _spam_comment_and_like_recent(self):
+        # settings
+        self.session.set_comments(self.comments)
+        self.session.set_do_comment(enabled=self.comment, percentage=self.comment_percent)
+        self.session.set_do_like(enabled=self.like, percentage=self.like_percent)
+        # start feature
+        self.session.multi_interact_by_users(self.accounts, amount=self.num_posts, randomize=False, num_comments_from=self.num_comments_from,
+                                             num_comments_to=self.num_comments_to)
 
     def _login(self, username):
         user = username

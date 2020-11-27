@@ -13,7 +13,7 @@ future==0.18.2
 googleapis-common-protos==1.52.0
 grpcio==1.33.2
 idna==2.10
-instapy==0.6.12
+-e git+https://github.com/trevtravtrev/InstaPy@8412cb69a7dc4c4a8a1269bf7b6299baf8fb5b93#egg=instapy
 jsonschema==2.6.0
 MeaningCloud-python==2.0.0
 plyer==2.0.0
