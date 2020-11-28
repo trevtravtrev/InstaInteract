@@ -1,4 +1,5 @@
 *.bat
+*ico
 emojis.txt
 words.txt
 *.idea
